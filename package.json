@@ -1,0 +1,14 @@
+{
+  "name": "com.app.app",
+  "displayName": "app",
+  "version": "0.1.0",
+  "main": "index.js",
+  "devDependencies": {
+    "cordova-android": "^13.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  }
+}
