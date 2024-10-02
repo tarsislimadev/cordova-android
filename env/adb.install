@@ -1,0 +1,1 @@
+adb install $( find -name app-debug.apk )

@@ -1,0 +1,5 @@
+. ~/.env
+
+# keystorepath -> keystore 2025-12-12 00:00
+
+cordova build android --release -- --keystore="${keystorepath}/app.keystore" --storePassword=app --alias=app
