@@ -1,5 +1,21 @@
 . ~/.env
 
-# keystorepath -> keystore 2025-12-12 00:00
+aliasname="appname"
 
-cordova build android --release -- --keystore="${keystorepath}/app.keystore" --storePassword=app --alias=app
+keystore="./app.20251212.keystore"
+
+storepasswd="${aliasname}"
+
+keystoretype="jks"
+
+packagetype="apk"
+
+validity=$(( ($(date +%s) - $(date --date="121225" +%s) )/(60*60*24) ))
+
+echo "validity: ${validity}"
+
+# https://docs.oracle.com/en/java/javase/22/docs/specs/man/keytool.html
+
+keytool -genkeypair -dname "cn=, ou=, o=, c=" -alias "${aliasname}" -keyalg rsa -keypass "${storepasswd}" -keystore "${keystore}" -storepass "${storepasswd}" -validity "${validity}"
+
+cordova build android --release -- --keystore="${keystore}" --storePassword="${storepasswd}" --alias="${aliasname}" --password="${storepasswd}" --keystoreType="${keystoretype}" --packageType="${packagetype}"
