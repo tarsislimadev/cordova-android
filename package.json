@@ -4,11 +4,18 @@
   "version": "0.1.0",
   "main": "index.js",
   "devDependencies": {
-    "cordova-android": "^13.0.0"
+    "cordova-android": "^13.0.0",
+    "cordova-browser": "^7.0.0",
+    "cordova-electron": "^4.0.0"
   },
   "cordova": {
     "platforms": [
-      "android"
+      "android",
+      "browser",
+      "electron"
     ]
+  },
+  "dependencies": {
+    "@awesome-cordova-plugins/core": "^6.9.0"
   }
 }
